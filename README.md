@@ -9,11 +9,6 @@
 **Database:** MongoDB
 
 
-## Authors
-
-- [@NirmallyaMitra](https://github.com/NirmallyaMitra)
-
-
 ## Run Locally
 
 Clone the project
@@ -39,4 +34,9 @@ Start the server
 ```bash
   npm run start
 ```
+
+
+## Authors
+
+- [@NirmallyaMitra](https://github.com/NirmallyaMitra)
 
