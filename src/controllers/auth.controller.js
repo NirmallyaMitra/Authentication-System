@@ -39,6 +39,7 @@ import config from "../config/config.js";
 //   })
 // }
 
+/*
 // Some Notes About Cookies
 // A cookie is a small piece of data stored in the user's browser.
 // When the browser makes another request to your server, it can automatically send those cookies back.
@@ -55,7 +56,7 @@ import config from "../config/config.js";
 //    ↓
 // Future requests automatically send cookie
 
-
+*/
 export async function register(req, res){
 
   const {username, email, password} = req.body;
