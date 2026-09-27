@@ -1,5 +1,7 @@
-import userModel from "../models/users.model";
+import userModel from "../models/users.model.js";
+import jwt from "jsonwebtoken";
 import crypto from "crypto";
+import config from "../config/config.js";
 
 export async function register(req, res){
 
@@ -17,9 +19,22 @@ export async function register(req, res){
   }
 
   const hashedPassword = crypto.createHash("sha256").update(password).digest("hex");
+  
   const user = await userModel.create({
     username,
     email,
     password: hashedPassword
   });
+
+  const token = jwt.sign({
+    id: user._id
+  },config.JWT_SECRET,{
+    expiresIn: "1h"
+  });
+
+  res.status(201).json({
+    message: "User created successfully.",
+    userid: user._id,
+    token
+  })
 }
