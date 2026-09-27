@@ -5,5 +5,6 @@ const authRouter = Router();
 
 authRouter.post("/register", authController.register);
 authRouter.get("/getUser", authController.getUser);
+authRouter.get("/refreshToken", authController.refreshToken);
 
 export default authRouter;

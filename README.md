@@ -21,7 +21,7 @@ A simple and secure JWT-based authentication system built with Node.js, Express.
 
 **Database:** MongoDB
 
-**API Clent** Postman
+**API Clent:** Postman
 ## Run Locally
 
 Clone the project
