@@ -38,3 +38,21 @@ export async function register(req, res){
     token
   })
 }
+
+export async function getUser(req, res){
+  const token = req.headers.authorization?.split(" ")[1];
+
+  const decoded = jwt.verify(token, config.JWT_SECRET);
+
+  // console.log(decoded);
+
+  const user = await userModel.findById(decoded.id);
+
+  res.status(200).json({
+    message: "User fetched Successfully",
+    user:{
+      username: user.username,
+      email: user.email
+    }
+  })
+}
